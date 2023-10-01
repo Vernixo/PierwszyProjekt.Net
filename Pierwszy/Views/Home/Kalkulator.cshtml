@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Pierwszy.Models.Kalkulator
+@{
+    ViewData["Title"] = "Kalkulator";
+}
+<form>
+    <input type="firstNumber" asp-for="firstNumber" /> Pierwsza Liczba
+    <br />
+    <input type="secondNumber" asp-for="secondNumber" /> Druga Liczba
+    <br />
+    <input type="radio" id="dodawanie" name="operation" asp-for="operation" value=" dod">
+    <label for="dodawanie">Dodawanie</label><br>
+    <input type="radio" id="odejmowanie" name="operation" asp-for="operation" value="ode">
+    <label for="odejmowanie">Odejmowanie</label><br>
+    <input type="radio" id="mnożenie" name="operation" asp-for="operation" value="mno" />
+    <label for="mnożenie">Mnożenie</label><br />
+    <input type="radio" id="dzielenie" name="operation" asp-for="operation" value="dzi" />
+    <label for="dzielenie">Dzielenie</label><br />
+    <input type="submit" />
+
+
+
+</form>
