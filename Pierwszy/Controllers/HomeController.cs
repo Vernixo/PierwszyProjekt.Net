@@ -51,7 +51,37 @@ namespace Pierwszy.Controllers
 
         public IActionResult Kalkulator(Kalkulator kalkulator)
         {
+            double result = 0;
 
+            switch (kalkulator.operation)
+            {
+                case "dod":
+                    result = kalkulator.firstNumber + kalkulator.secondNumber;
+                    break;
+                case "ode":
+                    result = kalkulator.firstNumber - kalkulator.secondNumber;
+                    break;
+                case "mno":
+                    result = kalkulator.firstNumber * kalkulator.secondNumber;
+                    break;
+                case "dzi":
+                    if (kalkulator.secondNumber != 0)
+                    {
+                        result = (double)kalkulator.firstNumber / kalkulator.secondNumber;
+                    }
+                    else
+                    {
+                        ViewBag.result = "Error: Division by zero.";
+                        return View(kalkulator);
+                    }
+                    break;
+                default:
+                    // Handle invalid operation
+                    break;
+            }
+
+            kalkulator.result = result;
+            ViewBag.Wynik = kalkulator.result;
             return View(kalkulator);
         }
 

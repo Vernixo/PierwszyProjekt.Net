@@ -6,11 +6,11 @@
     ViewData["Title"] = "Kalkulator";
 }
 <form>
-    <input type="firstNumber" asp-for="firstNumber" /> Pierwsza Liczba
+    <input type="firstNumber" asp-for="firstNumber" default="21" /> Pierwsza Liczba
     <br />
-    <input type="secondNumber" asp-for="secondNumber" /> Druga Liczba
+    <input type="secondNumber" asp-for="secondNumber" default="37" /> Druga Liczba
     <br />
-    <input type="radio" id="dodawanie" name="operation" asp-for="operation" value=" dod">
+    <input type="radio" id="dodawanie" name="operation" asp-for="operation" value="dod">
     <label for="dodawanie">Dodawanie</label><br>
     <input type="radio" id="odejmowanie" name="operation" asp-for="operation" value="ode">
     <label for="odejmowanie">Odejmowanie</label><br>
@@ -19,7 +19,7 @@
     <input type="radio" id="dzielenie" name="operation" asp-for="operation" value="dzi" />
     <label for="dzielenie">Dzielenie</label><br />
     <input type="submit" />
-
-
-
 </form>
+<br />
+@ViewBag.Wynik
+<p>@ViewBag.result</p>
